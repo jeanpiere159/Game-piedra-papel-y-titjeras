@@ -1,0 +1,123 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Open Sans", sans-serif;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f6f7fb;
+}
+
+.container {
+    padding: 2rem 7rem;
+    border-radius: 14px;
+    background: #fff;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.result-images {
+    display: flex;
+    column-gap: 7rem;
+}
+
+/* Animación cuando el juego empieza */
+.container.start .user_result {
+    animation: usershake 0.7s ease infinite;
+    transform-origin: left;
+}
+
+.container.start .cpu_result {
+    animation: cpushake 0.7s ease infinite;
+    transform-origin: right;
+}
+
+/* Animación del usuario */
+@keyframes usershake {
+    50% {
+        transform: rotate(10deg);
+    }
+}
+
+/* Animación de la CPU */
+@keyframes cpushake {
+    50% {
+        transform: rotate(-10deg);
+    }
+}
+
+.result-images img {
+    width: 100px;
+}
+
+.user_result img {
+    transform: rotate(90deg);
+}
+
+.cpu_result img {
+    transform: rotate(-90deg) rotateY(180deg);
+}
+
+.results {
+    text-align: center;
+    font-size: 2rem;
+    color: #7d2ae8;
+    margin-top: 1.5rem;
+}
+
+.option_images {
+    display: flex;
+    margin-top: 2.5rem;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.option_images img {
+    width: 50px;
+}
+
+.option_image {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    opacity: 0.5;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+}
+
+.option_image:hover {
+    opacity: 1;
+}
+
+.option_image img {
+    pointer-events: none;
+}
+
+.option_image p {
+    color: #7d2ae8;
+    font-size: 1.3rem;
+    margin-top: 1rem;
+    pointer-events: none;
+}
+
+.user_result p{
+    color: #7d2ae8;
+    text-align: center;
+    font-size: 1.3rem;
+    margin-top: 1rem;
+    pointer-events: none;
+}
+
+.cpu_result p{
+    text-align: center;
+    color: #7d2ae8;
+    font-size: 1.3rem;
+    margin-top: 1rem;
+    pointer-events: none;
+}
